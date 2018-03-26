@@ -101,43 +101,5 @@ public class TestImages {
 	}
 	
 	public static void main(String args[]) {
-//		try {
-//			testIsSuccess();
-//		} catch (IOException | InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		try {
-//			testCut("17sb");
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		getNumber();
-//		TrainImages ti;
-//		try {
-//			ti = new TrainImages();
-//			ti.setVisible(true);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		try {
-			File f1=new File("/home/shadz/pictures");
-			URL url=new URL("http://hfutspk.hfut.edu.cn/getRandomImage.do");
-			for (int i=0;i<10;i++) {
-				GetImages.getImages(url, f1);
-				Thread.sleep(100);
-			}
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }
