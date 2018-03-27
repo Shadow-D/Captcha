@@ -10,7 +10,9 @@ import java.net.URL;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
-
+/*
+ * 该类负责对图片内容的判断
+ */
 public class FindImages {
 	// 根据平均值判断颜色
 	public static int isWhite(int colorInt,long count) {
@@ -34,7 +36,7 @@ public class FindImages {
 	public static String comparImage(BufferedImage image) throws FileNotFoundException, IOException {
 		String str="";
 		int count=0;
-		File f1=new File("/home/shadz/demo");
+		File f1=new File("/home/shadz/demo");// 模板图片目录
 		int width=image.getWidth();
 		int height=image.getHeight();
 		for (File f2:f1.listFiles()) {// 遍历模板文件夹，与所有图片对比
@@ -78,7 +80,7 @@ public class FindImages {
 		for (int i=0;i<4;i++) {
 			string.append(comparImage(img2[i]));
 		}
-		file.renameTo(new File(targetDir.getPath()+File.separator+string.toString()));// 以识别的字符串命名
+		file.renameTo(new File(targetDir.getPath()+File.separator+string.toString()));// 将图片以识别出的字符串命名
 	}
 	// 识别字符串，识别用
 	public static String FindString(URL url) throws FileNotFoundException, IOException {

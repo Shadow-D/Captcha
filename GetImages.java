@@ -13,6 +13,9 @@ import java.util.Date;
 import javax.imageio.ImageIO;
 
 public class GetImages {
+	/*
+	 * 该类负责图片的获取
+	 */
 	// 下载验证码，调试用
 	public static void getImages(URL sourceUrl,File targetDir) throws IOException {
 		URLConnection con=sourceUrl.openConnection();
@@ -29,7 +32,7 @@ public class GetImages {
 		byte[] bs=new byte[1024];
 		int len;
 		while ((len=in.read(bs))!=-1) {
-			bo.write(bs, 0, len);
+			bo.write(bs, 0, len);// 存到目标文件夹
 		}
 		in.close();
 		bo.close();

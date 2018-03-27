@@ -16,10 +16,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class TrainImages extends JFrame implements ActionListener{
+	/*
+	 * 该类负责识别训练
+	 */
 	private static final long serialVersionUID = 1L;
 	
-	URL url=new URL("http://hfutspk.hfut.edu.cn/getRandomImage.do");
-	static String path="/home/shadz/demo";
+	URL url=new URL("http://hfutspk.hfut.edu.cn/getRandomImage.do");// 验证码URL
+	static String path="/home/shadz/demo";// 模板图片目录
 	static BufferedImage img;
 	static BufferedImage[] images;
 	static ImageIcon image;

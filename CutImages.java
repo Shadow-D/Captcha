@@ -10,6 +10,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class CutImages {
+	/*
+	 * 该类负责对图片的处理与切割
+	 */
 	// 将图片转成黑白,调试用
 	public static void changeImage(File image,File targetDir) throws FileNotFoundException, IOException {
 		BufferedImage img=ImageIO.read(new FileInputStream(image));
@@ -71,7 +74,7 @@ public class CutImages {
 	public static void cutImages(File image,File targetDir) throws FileNotFoundException, IOException {
 		BufferedImage bfi=ImageIO.read(new FileInputStream(image));
 		BufferedImage[] img=new BufferedImage[4];
-		// 粗略切割，尽量保存各字符
+		// 粗略切割，尽量保存各字符，可根据图片实际修改裁剪参数
 		img[0]=bfi.getSubimage(0, 4, 20, 15);
 		img[1]=bfi.getSubimage(15, 2, 20, 15);
 		img[2]=bfi.getSubimage(30, 5, 20, 15);
@@ -81,7 +84,7 @@ public class CutImages {
 		}
 		String path=targetDir.getAbsolutePath();
 		// 将切割后的图片存到目标文件夹
-		for (int i=0;i<4;i++) {
+		for (int i=0;i<img.length;i++) {
 			File f1=new File(path+File.separator+image.getName()+"_"+String.valueOf(i));
 			f1.createNewFile();
 			ImageIO.write(img[i], "jpeg", f1);
