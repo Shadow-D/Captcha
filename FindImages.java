@@ -92,4 +92,13 @@ public class FindImages {
 		}
 		return string.toString();// 返回识别结果
 	}
+	
+	public static String FindString(BufferedImage img) throws FileNotFoundException, IOException {
+		StringBuilder string=new StringBuilder();
+		BufferedImage[] img2=CutImages.unionCut(img);
+		for (int i=0;i<4;i++) {
+			string.append(comparImage(img2[i]));
+		}
+		return string.toString();// 返回识别结果
+	}
 }
